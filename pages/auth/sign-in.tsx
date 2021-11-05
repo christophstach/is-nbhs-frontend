@@ -35,7 +35,7 @@ const SignIn: NextPage = () => {
     return (
         <AuthLayout>
             <Head>
-                <title>NBHS: Sign In</title>
+                <title>NBHS: Anmelden</title>
             </Head>
 
             <Box

@@ -16,7 +16,7 @@ const SignOut: NextPage = () => {
     return (
         <AuthLayout>
             <Head>
-                <title>NBHS: Sign Out</title>
+                <title>NBHS: Abmelden</title>
             </Head>
 
             <Box
