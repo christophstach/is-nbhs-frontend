@@ -59,14 +59,11 @@ const MainLayout: FunctionComponent = ({children}) => {
                             <Menu
                                 anchorEl={anchorEl}
                                 anchorOrigin={{
-                                    vertical: 'top',
+                                    vertical: 'bottom',
                                     horizontal: 'right',
                                 }}
                                 keepMounted
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'right',
-                                }}
+
                                 open={Boolean(anchorEl)}
                                 onClose={handleClose}
                             >

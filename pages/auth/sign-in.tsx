@@ -12,6 +12,7 @@ import { NextPage } from "next";
 import AuthLayout from "../../components/AuthLayout";
 import Head from 'next/head';
 import { useCookies } from 'react-cookie';
+import Image from 'next/image';
 
 
 
@@ -46,11 +47,12 @@ const SignIn: NextPage = () => {
                     alignItems: 'center',
                 }}
             >
-                <Avatar sx={{m: 1, bgcolor: 'secondary.main'}}>
-                    <LockOutlinedIcon/>
-                </Avatar>
+                <Box mb={5}>
+                    <Image src="/nbhs_nachbarschaftheim_logo.svg" alt="NBHS Logo" width={286} height={90} />
+                </Box>
+
                 <Typography component="h1" variant="h5">
-                    Sign in
+                    Login
                 </Typography>
                 <Box component="form" onSubmit={handleSubmit} noValidate sx={{mt: 1}}>
                     <TextField

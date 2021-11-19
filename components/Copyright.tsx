@@ -5,7 +5,7 @@ import { FunctionComponent } from 'react';
 
 const Copyright: FunctionComponent = () => {
     return (
-        <Typography variant="body2" color="text.secondary" align="center">
+        <Typography variant="body2" color="text.secondary" align="center" mt={5}>
             {'Copyright © '}
             <Link color="inherit" href="https://www.nbhs.de/">
                 NBHS
