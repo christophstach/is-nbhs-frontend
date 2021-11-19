@@ -97,7 +97,7 @@ const GtbOs: NextPage = () => {
                             ))
                         ) : (
                             <TableRow>
-                                <TableCell colSpan={4}>Loading...</TableCell>
+                                <TableCell colSpan={6} sx={{textAlign: 'center'}}>Loading...</TableCell>
                             </TableRow>
                         )}
                     </TableBody>
