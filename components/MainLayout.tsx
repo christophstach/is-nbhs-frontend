@@ -5,19 +5,11 @@ import Drawer from '@mui/material/Drawer';
 import AppBar from '@mui/material/AppBar';
 import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import BarChartIcon from '@mui/icons-material/BarChart';
-import PieChartIcon from '@mui/icons-material/PieChart';
-import ShowChartIcon from '@mui/icons-material/ShowChart';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Copyright from './Copyright';
-import { IconButton, ListItemButton, ListSubheader, Menu, MenuItem } from '@mui/material';
+import { Divider, IconButton, Menu, MenuItem } from '@mui/material';
 import { AccountCircle } from '@mui/icons-material';
 import SideNav from './SideNav';
 
@@ -44,10 +36,14 @@ const MainLayout: FunctionComponent = ({children}) => {
             <Box sx={{display: 'flex'}}>
                 <CssBaseline/>
                 <AppBar position="fixed" sx={{zIndex: (theme) => theme.zIndex.drawer + 1}}>
-                    <Toolbar>
-                        <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
+                    <Toolbar sx={{gap: '1rem'}}>
+                        <Typography variant="h6" noWrap component="div" sx={{flexGrow: 1}}>
                             IS: NBHS
                         </Typography>
+
+                        <div id="top-nav-portal"/>
+
+                        <Divider orientation="vertical" variant="middle" flexItem/>
 
                         <div>
                             <IconButton
@@ -85,7 +81,7 @@ const MainLayout: FunctionComponent = ({children}) => {
                 >
                     <Toolbar/>
                     <Box sx={{overflow: 'auto'}}>
-                        <SideNav />
+                        <SideNav/>
                     </Box>
                 </Drawer>
                 <Box component="main" sx={{flexGrow: 1, p: 3}}>

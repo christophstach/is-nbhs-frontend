@@ -16,6 +16,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import CheckIcon from '@mui/icons-material/Check';
 import InfoIcon from '@mui/icons-material/Info';
+import TopNavPortal from '../../components/TopNavPortal';
+import Button from '@mui/material/Button';
 
 
 export interface GtbOsFormsResponse {
@@ -43,6 +45,10 @@ const GtbOs: NextPage = () => {
             <Head>
                 <title>NBHS: Formulare - GTB OS</title>
             </Head>
+
+            <TopNavPortal>
+                <Button variant="contained">Neues GTB OS Formular anlegen</Button>
+            </TopNavPortal>
 
             <TableContainer component={Paper}>
                 <Table>
