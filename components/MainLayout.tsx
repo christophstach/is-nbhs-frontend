@@ -19,6 +19,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Copyright from './Copyright';
 import { IconButton, ListItemButton, ListSubheader, Menu, MenuItem } from '@mui/material';
 import { AccountCircle } from '@mui/icons-material';
+import SideNav from './SideNav';
 
 
 const drawerWidth: number = 300;
@@ -84,52 +85,7 @@ const MainLayout: FunctionComponent = ({children}) => {
                 >
                     <Toolbar/>
                     <Box sx={{overflow: 'auto'}}>
-                        <List>
-                            <ListItem disablePadding>
-                                <ListItemButton component="a" href="/users">
-                                    <ListItemIcon>
-                                        <PeopleAltIcon/>
-                                    </ListItemIcon>
-                                    <ListItemText primary="Benutzerverwaltung"/>
-                                </ListItemButton>
-                            </ListItem>
-
-
-                            <ListSubheader>Formulare</ListSubheader>
-
-                            <List>
-                                <ListItemButton component="a" href="/forms/gtb-os">
-                                    <ListItemText primary="GTB OS"/>
-                                </ListItemButton>
-                                <ListItemButton component="a" href="/forms/district-work">
-                                    <ListItemText primary="Stadtteilarbeit"/>
-                                </ListItemButton>
-                            </List>
-
-                            <ListSubheader>Statistiken</ListSubheader>
-
-                            <List>
-                                <ListItemButton component="a">
-                                    <ListItemIcon>
-                                        <BarChartIcon/>
-                                    </ListItemIcon>
-                                    <ListItemText primary="Statistik 1"/>
-                                </ListItemButton>
-                                <ListItemButton component="a">
-                                    <ListItemIcon>
-                                        <PieChartIcon/>
-                                    </ListItemIcon>
-                                    <ListItemText primary="Statistik 2"/>
-                                </ListItemButton>
-                                <ListItemButton component="a">
-                                    <ListItemIcon>
-                                        <ShowChartIcon/>
-                                    </ListItemIcon>
-                                    <ListItemText primary="Statistik 3"/>
-                                </ListItemButton>
-                            </List>
-
-                        </List>
+                        <SideNav />
                     </Box>
                 </Drawer>
                 <Box component="main" sx={{flexGrow: 1, p: 3}}>
