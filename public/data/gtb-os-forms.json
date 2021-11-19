@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Schwimmbad Neukölln",
+      "acquisitionTimeSpan": {
+        "from": "2021-11-19T14:48:23.814Z",
+        "to": "2021-11-19T14:48:23.814Z"
+      },
+      "submitter": "Tobias Kolb",
+      "reviewer": "Christoph Stach",
+      "releasedForReview": true
+    },
+    {
+      "id": 2,
+      "name": "Nachbarschaftsaustausch",
+      "acquisitionTimeSpan": {
+        "from": "2021-11-19T14:48:23.814Z",
+        "to": "2021-11-19T14:48:23.814Z"
+      },
+      "submitter": "Tobias Kolb",
+      "reviewer": null,
+      "releasedForReview": false
+    },
+    {
+      "id": 3,
+      "name": "Sprachcafé",
+      "acquisitionTimeSpan": {
+        "from": "2021-11-19T14:48:23.814Z",
+        "to": "2021-11-19T14:48:23.814Z"
+      },
+      "submitter": "Tobias Kolb",
+      "reviewer": null,
+      "releasedForReview": true
+    }
+  ],
+  "meta": {
+  }
+}
