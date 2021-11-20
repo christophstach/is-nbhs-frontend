@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import MainLayout from '../../components/MainLayout';
+import MainLayout from '../../../components/MainLayout';
 import Head from 'next/head';
 import * as React from 'react';
 import Table from '@mui/material/Table';
@@ -16,7 +16,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import CheckIcon from '@mui/icons-material/Check';
 import InfoIcon from '@mui/icons-material/Info';
-import TopNavPortal from '../../components/TopNavPortal';
+import TopNavPortal from '../../../components/TopNavPortal';
 import Button from '@mui/material/Button';
 
 
@@ -36,7 +36,7 @@ export interface GtbOsFormsResponse {
 }
 
 
-const GtbOs: NextPage = () => {
+const GtbOsIndex: NextPage = () => {
     const response = useSWR<GtbOsFormsResponse>('/data/gtb-os-forms.json');
     const forms = response.data?.data;
 
@@ -86,16 +86,16 @@ const GtbOs: NextPage = () => {
                                         )}
                                     </TableCell>
                                     <TableCell sx={{whiteSpace: 'nowrap'}} >
-                                        <IconButton>
+                                        <IconButton component="a" href={`/forms/gtb-os/${form.id}`}>
                                             <EditIcon color="warning" />
                                         </IconButton>
-                                        <IconButton>
+                                        <IconButton component="a" href={`/forms/gtb-os/${form.id}/delete`}>
                                             <DeleteIcon color="error" />
                                         </IconButton>
-                                        <IconButton>
+                                        <IconButton component="a" href={`/forms/gtb-os/${form.id}/review`}>
                                             <InfoIcon color="info" />
                                         </IconButton>
-                                        <IconButton>
+                                        <IconButton component="a" href={`/forms/gtb-os/${form.id}/approve`}>
                                             <CheckIcon color="success" />
                                         </IconButton>
                                     </TableCell>
@@ -113,4 +113,4 @@ const GtbOs: NextPage = () => {
     )
 }
 
-export default GtbOs
+export default GtbOsIndex

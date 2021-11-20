@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect, useLayoutEffect } from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import { Collapse, Divider, ListItemButton } from '@mui/material';
@@ -13,10 +13,31 @@ import DynamicFormIcon from '@mui/icons-material/DynamicForm';
 import HouseIcon from '@mui/icons-material/House';
 
 const SideNav: FunctionComponent = () => {
-
-    const [statisticsOpen, setStatisticsOpen] = React.useState(false);
     const [formsOpen, setFormsOpen] = React.useState(false);
+    const [statisticsOpen, setStatisticsOpen] = React.useState(false);
 
+
+    useLayoutEffect(() => {
+        const sessionFormsOpen = sessionStorage.getItem('SideNav.formsOpen');
+        const sessionStatisticsOpen = sessionStorage.getItem('SideNav.statisticsOpen');
+
+        if (sessionFormsOpen) {
+            setFormsOpen(JSON.parse(sessionFormsOpen));
+        }
+
+        if (sessionStatisticsOpen) {
+            setStatisticsOpen(JSON.parse(sessionStatisticsOpen));
+        }
+    }, []);
+
+    useEffect(() => {
+        sessionStorage.setItem('SideNav.formsOpen', JSON.stringify(formsOpen));
+    }, [formsOpen]);
+
+    useLayoutEffect(() => {
+        sessionStorage.setItem('SideNav.statisticsOpen', JSON.stringify(statisticsOpen));
+    }, [statisticsOpen]);
+    
     function handleOpenCloseForms() {
         setFormsOpen(!formsOpen);
     }
