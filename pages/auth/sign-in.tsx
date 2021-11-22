@@ -1,20 +1,14 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 
 
 import { NextPage } from "next";
-
-import AuthLayout from "../../components/AuthLayout";
 import Head from 'next/head';
 import { useCookies } from 'react-cookie';
 import Image from 'next/image';
-
-
 
 
 const SignIn: NextPage = () => {
@@ -29,12 +23,12 @@ const SignIn: NextPage = () => {
             password: data.get('password'),
         });
 
-        setCookie('user-token', 'testValue', { path: '/' });
+        setCookie('user-token', 'testValue', {path: '/'});
         document.location.reload();
     };
 
     return (
-        <AuthLayout>
+        <>
             <Head>
                 <title>NBHS: Anmelden</title>
             </Head>
@@ -48,7 +42,7 @@ const SignIn: NextPage = () => {
                 }}
             >
                 <Box mb={5}>
-                    <Image src="/nbhs_nachbarschaftheim_logo.svg" alt="NBHS Logo" width={286} height={90} />
+                    <Image src="/nbhs_nachbarschaftheim_logo.svg" alt="NBHS Logo" width={286} height={90}/>
                 </Box>
 
                 <Typography component="h1" variant="h5">
@@ -87,7 +81,7 @@ const SignIn: NextPage = () => {
 
                 </Box>
             </Box>
-        </AuthLayout>
+        </>
     )
 }
 

@@ -7,11 +7,11 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import ListItemText from '@mui/material/ListItemText';
 import PieChartIcon from '@mui/icons-material/PieChart';
-import IconExpandLess from '@mui/icons-material/ExpandLess'
-import IconExpandMore from '@mui/icons-material/ExpandMore'
+import IconExpandLess from '@mui/icons-material/ExpandLess';
+import IconExpandMore from '@mui/icons-material/ExpandMore';
 import DynamicFormIcon from '@mui/icons-material/DynamicForm';
 import HouseIcon from '@mui/icons-material/House';
-import Link from 'next/link'
+import Link from 'next/link';
 
 const SideNav: FunctionComponent = () => {
     const [formsOpen, setFormsOpen] = React.useState(false);

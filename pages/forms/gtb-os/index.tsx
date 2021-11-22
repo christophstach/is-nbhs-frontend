@@ -1,5 +1,4 @@
 import { NextPage } from 'next';
-import MainLayout from '../../../components/MainLayout';
 import Head from 'next/head';
 import * as React from 'react';
 import Table from '@mui/material/Table';
@@ -41,7 +40,7 @@ const GtbOsIndex: NextPage = () => {
     const forms = response.data?.data;
 
     return (
-        <MainLayout>
+        <>
             <Head>
                 <title>NBHS: Formulare - GTB OS</title>
             </Head>
@@ -85,18 +84,18 @@ const GtbOsIndex: NextPage = () => {
                                             <em>Noch nicht zur Überprüfung freigeben</em>
                                         )}
                                     </TableCell>
-                                    <TableCell sx={{whiteSpace: 'nowrap'}} >
+                                    <TableCell sx={{whiteSpace: 'nowrap'}}>
                                         <IconButton component="a" href={`/forms/gtb-os/${form.id}`}>
-                                            <EditIcon color="warning" />
+                                            <EditIcon color="warning"/>
                                         </IconButton>
                                         <IconButton component="a" href={`/forms/gtb-os/${form.id}/delete`}>
-                                            <DeleteIcon color="error" />
+                                            <DeleteIcon color="error"/>
                                         </IconButton>
                                         <IconButton component="a" href={`/forms/gtb-os/${form.id}/review`}>
-                                            <InfoIcon color="info" />
+                                            <InfoIcon color="info"/>
                                         </IconButton>
                                         <IconButton component="a" href={`/forms/gtb-os/${form.id}/approve`}>
-                                            <CheckIcon color="success" />
+                                            <CheckIcon color="success"/>
                                         </IconButton>
                                     </TableCell>
                                 </TableRow>
@@ -109,7 +108,7 @@ const GtbOsIndex: NextPage = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
-        </MainLayout>
+        </>
     )
 }
 
