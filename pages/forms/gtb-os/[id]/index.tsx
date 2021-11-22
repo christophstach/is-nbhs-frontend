@@ -3,10 +3,13 @@ import Head from 'next/head';
 import * as React from 'react';
 import MainLayout from '../../../../components/MainLayout';
 import { useRouter } from 'next/router'
+import Paper from '@mui/material/Paper';
+import { TextField } from '@mui/material';
+import Box from '@mui/material/Box';
 
 const GtbOsSingleIndex: NextPage = () => {
     const router = useRouter();
-    const { id } = router.query;
+    const {id} = router.query;
 
     console.log(router.query);
 
@@ -15,6 +18,20 @@ const GtbOsSingleIndex: NextPage = () => {
             <Head>
                 <title>NBHS: Formulare - GTB OS - {id}</title>
             </Head>
+
+            <Paper sx={{padding: '1rem'}}>
+                <Box sx={{display: 'flex', gap: '1rem'}}>
+
+                    <TextField label="Mo" variant="filled" size="small"/>
+                    <TextField label="Di" variant="filled" size="small"/>
+                    <TextField label="Mi" variant="filled" size="small"/>
+                    <TextField label="Do" variant="filled" size="small"/>
+                    <TextField label="Fr" variant="filled" size="small"/>
+                    <TextField label="Sa" variant="filled" size="small"/>
+                    <TextField label="So" variant="filled" size="small"/>
+                    <TextField label="Gesamt" variant="filled" size="small"/>
+                </Box>
+            </Paper>
         </MainLayout>
     )
 }

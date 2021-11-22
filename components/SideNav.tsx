@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { FunctionComponent, useEffect, useLayoutEffect } from 'react';
+import { FunctionComponent } from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import { Collapse, Divider, ListItemButton } from '@mui/material';
@@ -11,33 +11,12 @@ import IconExpandLess from '@mui/icons-material/ExpandLess'
 import IconExpandMore from '@mui/icons-material/ExpandMore'
 import DynamicFormIcon from '@mui/icons-material/DynamicForm';
 import HouseIcon from '@mui/icons-material/House';
+import Link from 'next/link'
 
 const SideNav: FunctionComponent = () => {
     const [formsOpen, setFormsOpen] = React.useState(false);
     const [statisticsOpen, setStatisticsOpen] = React.useState(false);
 
-
-    useLayoutEffect(() => {
-        const sessionFormsOpen = sessionStorage.getItem('SideNav.formsOpen');
-        const sessionStatisticsOpen = sessionStorage.getItem('SideNav.statisticsOpen');
-
-        if (sessionFormsOpen) {
-            setFormsOpen(JSON.parse(sessionFormsOpen));
-        }
-
-        if (sessionStatisticsOpen) {
-            setStatisticsOpen(JSON.parse(sessionStatisticsOpen));
-        }
-    }, []);
-
-    useEffect(() => {
-        sessionStorage.setItem('SideNav.formsOpen', JSON.stringify(formsOpen));
-    }, [formsOpen]);
-
-    useLayoutEffect(() => {
-        sessionStorage.setItem('SideNav.statisticsOpen', JSON.stringify(statisticsOpen));
-    }, [statisticsOpen]);
-    
     function handleOpenCloseForms() {
         setFormsOpen(!formsOpen);
     }
@@ -49,21 +28,25 @@ const SideNav: FunctionComponent = () => {
     return (
         <List>
             <ListItem disablePadding>
-                <ListItemButton component="a" href="/users">
-                    <ListItemIcon>
-                        <PeopleAltIcon/>
-                    </ListItemIcon>
-                    <ListItemText primary="Benuzter"/>
-                </ListItemButton>
+                <Link href="/users" passHref>
+                    <ListItemButton component="a">
+                        <ListItemIcon>
+                            <PeopleAltIcon/>
+                        </ListItemIcon>
+                        <ListItemText primary="Benuzter"/>
+                    </ListItemButton>
+                </Link>
             </ListItem>
 
             <ListItem disablePadding>
-                <ListItemButton component="a" href="/areas">
-                    <ListItemIcon>
-                        <HouseIcon/>
-                    </ListItemIcon>
-                    <ListItemText primary="Bereiche"/>
-                </ListItemButton>
+                <Link href="/areas" passHref>
+                    <ListItemButton component="a">
+                        <ListItemIcon>
+                            <HouseIcon/>
+                        </ListItemIcon>
+                        <ListItemText primary="Bereiche"/>
+                    </ListItemButton>
+                </Link>
             </ListItem>
 
 
@@ -80,16 +63,20 @@ const SideNav: FunctionComponent = () => {
             <Collapse in={formsOpen} timeout="auto" unmountOnExit>
                 <Divider/>
                 <List component="div" disablePadding>
-                    <ListItem disablePadding>
-                        <ListItemButton component="a" href="/forms/gtb-os">
-                            <ListItemText inset primary="GTB OS"/>
-                        </ListItemButton>
-                    </ListItem>
 
                     <ListItem disablePadding>
-                        <ListItemButton component="a" href="/forms/district-work">
-                            <ListItemText inset primary="Stadtteilarbeit"/>
-                        </ListItemButton>
+                        <Link href="/forms/gtb-os" passHref>
+                            <ListItemButton component="a">
+                                <ListItemText inset primary="GTB OS"/>
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <ListItem disablePadding>
+                        <Link href="/forms/district-work" passHref>
+                            <ListItemButton component="a">
+                                <ListItemText inset primary="Stadtteilarbeit"/>
+                            </ListItemButton>
+                        </Link>
                     </ListItem>
                 </List>
                 <Divider/>
@@ -111,22 +98,28 @@ const SideNav: FunctionComponent = () => {
                 <List component="div" disablePadding>
 
                     <ListItem disablePadding>
-                        <ListItemButton component="a" href="/statistics/1">
-                            <ListItemText inset primary="Statistik 1"/>
-                        </ListItemButton>
+                        <Link href="/statistics/1" passHref>
+                            <ListItemButton component="a">
+                                <ListItemText inset primary="Statistik 1"/>
+                            </ListItemButton>
+                        </Link>
                     </ListItem>
 
                     <ListItem disablePadding>
-                        <ListItemButton component="a" href="/statistics/2">
-                            <ListItemText inset primary="Statistik 2"/>
-                        </ListItemButton>
+                        <Link href="/statistics/2" passHref>
+                            <ListItemButton component="a">
+                                <ListItemText inset primary="Statistik 2"/>
+                            </ListItemButton>
+                        </Link>
                     </ListItem>
 
 
                     <ListItem disablePadding>
-                        <ListItemButton component="a" href="/statistics/3">
-                            <ListItemText inset primary="Statistik 3"/>
-                        </ListItemButton>
+                        <Link href="/statistics/3" passHref>
+                            <ListItemButton component="a">
+                                <ListItemText inset primary="Statistik 3"/>
+                            </ListItemButton>
+                        </Link>
                     </ListItem>
                 </List>
             </Collapse>
