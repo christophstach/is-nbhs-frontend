@@ -98,7 +98,7 @@ const SideNav: FunctionComponent = () => {
                 <List component="div" disablePadding>
 
                     <ListItem disablePadding>
-                        <Link href="/statistics/1" passHref>
+                        <Link href="/statistics/first-statistic" passHref>
                             <ListItemButton component="a">
                                 <ListItemText inset primary="Statistik 1"/>
                             </ListItemButton>
