@@ -25,8 +25,13 @@ export const SubForm: FunctionComponent<SubFormProps> = (props) => {
 
 export interface WeekAcquisitionItem {
     name: string;
-    nameEditable: boolean;
-    values: [number, number, number, number, number, number, number];
+    monday: number;
+    tuesday: number;
+    wednesday: number;
+    thursday: number;
+    friday: number;
+    saturday: number;
+    sunday: number;
 }
 
 export interface WeekAcquisitionMultipleProps {
@@ -46,8 +51,13 @@ export const WeekAcquisitionMultiple: FunctionComponent<WeekAcquisitionMultipleP
             ...items,
             {
                 name: '',
-                nameEditable: true,
-                values: [0, 0, 0, 0, 0, 0, 0]
+                monday: 0,
+                tuesday: 0,
+                wednesday: 0,
+                thursday: 0,
+                friday: 0,
+                saturday: 0,
+                sunday: 0
             }
         ]);
     }
