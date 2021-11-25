@@ -5,19 +5,30 @@ import { TableCell, TextField } from '@mui/material';
 import Button from '@mui/material/Button';
 import { Controller, useFormContext } from "react-hook-form";
 
-export interface AcquisitionTimeSpanProps {
+export interface TimeSpanProps {
+    name: string;
+    label: string;
+}
 
+export const TimeSpan: FunctionComponent<TimeSpanProps> = (props) => {
+    return (
+        <TableRow>
+            <TableCell>{props.label}</TableCell>
+            <TableCell colSpan={8}>Test</TableCell>
+        </TableRow>
+
+    )
 }
 
 export interface SubFormProps {
-    name: string;
+    label: string;
 }
 
 export const SubForm: FunctionComponent<SubFormProps> = (props) => {
     return (
         <TableRow>
             <TableCell colSpan={9} sx={{backgroundColor: '#EEEEEE'}}>
-                <h3>{props.name}</h3>
+                <h3>{props.label}</h3>
             </TableCell>
         </TableRow>
     );
@@ -42,7 +53,7 @@ export interface WeekAcquisitionMultipleProps {
 
 export const WeekAcquisitionMultiple: FunctionComponent<WeekAcquisitionMultipleProps> = (props) => {
     const [items, setItems] = useState<WeekAcquisitionItem[]>(props.items);
-    const {control, watch, setValue} = useFormContext();
+    const {control, watch} = useFormContext();
     const watchFields = watch();
 
 

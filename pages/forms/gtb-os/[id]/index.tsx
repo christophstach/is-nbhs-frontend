@@ -5,16 +5,21 @@ import { useRouter } from 'next/router';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableContainer from '@mui/material/TableContainer';
-import { Comment, SubForm, WeekAcquisitionMultiple } from '../../../../components/FormControls';
+import { Comment, SubForm, TimeSpan, WeekAcquisitionMultiple } from '../../../../components/FormControls';
 import { Card, CardActions } from '@mui/material';
 import Button from '@mui/material/Button';
-import { SubmitHandler, useForm, FormProvider } from 'react-hook-form';
+import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 
 const tableStructure = {
     elements: [
         {
+            type: 'timeSpan',
+            name: 'timeSpan',
+            label: 'Zeitraum'
+        },
+        {
             type: 'subForm',
-            name: 'Beratungen (SuS, LuL, Eltern)'
+            label: 'Beratungen (SuS, LuL, Eltern)'
         },
         {
             type: 'weekAcquisitionMultiple',
@@ -28,7 +33,7 @@ const tableStructure = {
         },
         {
             type: 'subForm',
-            name: 'Beratungsthemen',
+            label: 'Beratungsthemen',
         },
         {
             type: 'weekAcquisitionMultiple',
@@ -41,33 +46,33 @@ const tableStructure = {
         },
         {
             type: 'subForm',
-            name: 'Gruppen und Kurse (sozialpädagogische Gruppenangebote, Klassenangebote, Einzelfallhilfe u.ä.)'
+            label: 'Gruppen und Kurse (sozialpädagogische Gruppenangebote, Klassenangebote, Einzelfallhilfe u.ä.)'
         },
         {
             type: 'subForm',
-            name: 'Besuchende bei sonstigen Aktivitäten (z.B. Pausenangebote, offene Angebote)'
+            label: 'Besuchende bei sonstigen Aktivitäten (z.B. Pausenangebote, offene Angebote)'
         },
         {
             type: 'subForm',
-            name: 'Ehrenamtliche Mitarbeitende'
+            label: 'Ehrenamtliche Mitarbeitende'
         },
         {
             type: 'subForm',
-            name: 'Kontaktaufnahme mit externen Hifsangeboten, Jugendamt, Beratungsstellen etc.'
-        },
-
-        {
-            type: 'subForm',
-            name: 'Gremien, Vernetzung und Kooperation (innerhalb und außerhalb der Schule)'
+            label: 'Kontaktaufnahme mit externen Hifsangeboten, Jugendamt, Beratungsstellen etc.'
         },
 
         {
             type: 'subForm',
-            name: 'Anzahl der Schülerinnen und Schüler an der Schule'
+            label: 'Gremien, Vernetzung und Kooperation (innerhalb und außerhalb der Schule)'
+        },
+
+        {
+            type: 'subForm',
+            label: 'Anzahl der Schülerinnen und Schüler an der Schule'
         },
         {
             type: 'subForm',
-            name: 'Bemerkungen'
+            label: 'Bemerkungen'
         },
         {
             type: 'comment',
@@ -104,9 +109,15 @@ const GtbOsSingleIndex: NextPage = () => {
                                 <TableBody>
                                     {tableStructure.elements.map((element, indexElement) => {
                                         switch (element.type) {
+                                            case 'timeSpan':
+                                                return (
+                                                    <TimeSpan key={indexElement}
+                                                              name={element.name as string}
+                                                              label={element.label as string}/>
+                                                )
                                             case 'subForm':
                                                 return (
-                                                    <SubForm key={indexElement} name={element.name as string}/>
+                                                    <SubForm key={indexElement} label={element.label as string}/>
                                                 );
                                             case 'comment':
                                                 return (
