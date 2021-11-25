@@ -49,7 +49,7 @@ export const WeekAcquisitionMultiple: FunctionComponent<WeekAcquisitionMultipleP
                 nameEditable: true,
                 values: [0, 0, 0, 0, 0, 0, 0]
             }
-        ])
+        ]);
     }
 
 
