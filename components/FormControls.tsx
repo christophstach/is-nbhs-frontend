@@ -42,23 +42,25 @@ export interface WeekAcquisitionMultipleProps {
 
 export const WeekAcquisitionMultiple: FunctionComponent<WeekAcquisitionMultipleProps> = (props) => {
     const [items, setItems] = useState<WeekAcquisitionItem[]>(props.items);
-    const {control, watch} = useFormContext();
+    const {control, watch, setValue} = useFormContext();
     const watchFields = watch();
 
 
     function handleAddItem() {
+        const newItem = {
+            name: '',
+            monday: 0,
+            tuesday: 0,
+            wednesday: 0,
+            thursday: 0,
+            friday: 0,
+            saturday: 0,
+            sunday: 0
+        };
+
         setItems([
             ...items,
-            {
-                name: '',
-                monday: 0,
-                tuesday: 0,
-                wednesday: 0,
-                thursday: 0,
-                friday: 0,
-                saturday: 0,
-                sunday: 0
-            }
+            newItem
         ]);
     }
 
@@ -201,15 +203,19 @@ export const WeekAcquisitionMultiple: FunctionComponent<WeekAcquisitionMultipleP
                                 borderBottom: '1px solid rgba(0, 0, 0, 0.42)'
                             }}>
                                 {
-                                    watchFields[props.name] ? (
-                                        watchFields[props.name][index].monday +
-                                        watchFields[props.name][index].tuesday +
-                                        watchFields[props.name][index].wednesday +
-                                        watchFields[props.name][index].thursday +
-                                        watchFields[props.name][index].friday +
-                                        watchFields[props.name][index].saturday +
-                                        watchFields[props.name][index].sunday
-                                    ) : (<></>)
+                                    watchFields[props.name] && watchFields[props.name][index] ? (
+                                        <>{
+                                            watchFields[props.name][index].monday +
+                                            watchFields[props.name][index].tuesday +
+                                            watchFields[props.name][index].wednesday +
+                                            watchFields[props.name][index].thursday +
+                                            watchFields[props.name][index].friday +
+                                            watchFields[props.name][index].saturday +
+                                            watchFields[props.name][index].sunday
+                                        }</>
+                                    ) : (
+                                        <>0</>
+                                    )
                                 }
                             </strong>
                         </TableCell>
