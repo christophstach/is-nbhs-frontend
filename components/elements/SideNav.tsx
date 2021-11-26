@@ -39,16 +39,36 @@ const SideNav: FunctionComponent = () => {
             </ListItem>
 
             <ListItem disablePadding>
-                <Link href="/areas" passHref>
+                <ListItemButton onClick={handleOpenCloseAreas}>
                     <ListItemButton component="a">
                         <ListItemIcon>
                             <HouseIcon/>
                         </ListItemIcon>
                         <ListItemText primary="Bereiche"/>
+                        {AreasOpen ? <IconExpandLess/> : <IconExpandMore/>}
                     </ListItemButton>
-                </Link>
             </ListItem>
 
+            <Collapse in={AreasOpen} timeout="auto" unmountOnExit>
+            <Divider/>
+            <List component="div" disablePadding>
+                <ListItem disablePadding>
+                    <Link href="/areas/areas-manage" passHref>
+                        <ListItemButton component="a">
+                            <ListItemText inset primary="Bereiche verwalten"/>
+                        </ListItemButton>
+                    </Link>
+                </ListItem>
+                <ListItem disablePadding>
+                    <Link href="/areas/areas-allocate" passHref>
+                        <ListItemButton component="a">
+                            <ListItemText inset primary="Bereiche zuordnen"/>
+                        </ListItemButton>
+                    </Link>
+                </ListItem>
+            </List>
+            <Divider/>
+        </Collapse>
 
             <ListItem disablePadding>
                 <ListItemButton onClick={handleOpenCloseForms}>
