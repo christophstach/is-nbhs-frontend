@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Name der Einrichtung",
+      "areatype": "Textfeld",
+      "comment": "Hier gibt man an, Name der Einrichtung"
+    },
+    {
+      "id": 2,
+      "name": "von",
+      "areatype": "Datumsfeld",
+      "comment": "Startdatum für alle Aktivitäten, die im Formular erfasst werden"
+    },
+    {
+      "id": 3,
+      "name": "bis",
+      "areatype": "Datumsfeld",
+      "comment": "Enddatum für alle Aktivitäten, die im Formular erfasst werden"
+    },
+    {
+      "id": 4,
+      "name": "Anwesende Teilnehmer",
+      "areatype": "Wochentlich",
+      "comment": "Gibt an, wie viele Personen wochentlich teilgenommen haben"
+    },
+    {
+      "id": 5,
+      "name": "Besucher bei sonstige Aktivitäten",
+      "areatype": "WochentlichErweitbar",
+      "comment": "Gibt an, wie viele Personen wochentlich teilgenommen haben [Kann erweitert werden]"
+    }
+  ],
+  "meta": {
+  }
+}

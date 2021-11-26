@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Feld 1 im Formular GTB",
+      "positionnumber": 1,
+      "areanumber": 1,
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Feld 2 im Formular GTB",
+      "positionnumber": 2,
+      "areanumber": 2,
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Feld 3 im Formular GTB",
+      "positionnumber": 3,
+      "areanumber": 3,
+      "active": true
+    },
+    {
+      "id": 4,
+      "name": "Feld 4 im Formular GTB",
+      "positionnumber": 4,
+      "areanumber": 4,
+      "active": true
+    },
+    {
+      "id": 5,
+      "name": "Feld 5 im Formular GTB",
+      "positionnumber": 5,
+      "areanumber": 5,
+      "active": true
+    }
+  ],
+  "meta": {
+  }
+}
