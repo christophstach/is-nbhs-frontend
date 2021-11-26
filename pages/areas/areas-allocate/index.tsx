@@ -60,7 +60,7 @@ const AreasAllocateIndex: NextPage = () => {
                 <TableCell>{area.id}</TableCell>
                 <TableCell>{area.areanumber}</TableCell>
                 <TableCell>{area.name}</TableCell>
-                <TableCell>{area.postionnumber}</TableCell>
+                <TableCell>{area.positionnumber}</TableCell>
                 <TableCell>{area.active}</TableCell>
 
                 <TableCell sx={{whiteSpace: 'nowrap'}}>
