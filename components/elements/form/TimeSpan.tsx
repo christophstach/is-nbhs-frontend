@@ -36,7 +36,6 @@ const TimeSpan: FunctionComponent<TimeSpanProps> = (props) => {
                                     renderInput={(params: any) => {
                                         return (
                                             <TextField {...params}
-                                                       required
                                                        sx={{width: '100%'}}
                                                        variant="filled"
                                                        size="small"
@@ -62,7 +61,6 @@ const TimeSpan: FunctionComponent<TimeSpanProps> = (props) => {
                                     renderInput={(params: any) => {
                                         return (
                                             <TextField {...params}
-                                                       required
                                                        sx={{width: '100%'}}
                                                        variant="filled"
                                                        size="small"
