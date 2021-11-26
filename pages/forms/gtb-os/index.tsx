@@ -8,15 +8,15 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import useSWR from 'swr'
 import { format } from 'date-fns'
 import { IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import CheckIcon from '@mui/icons-material/Check';
 import InfoIcon from '@mui/icons-material/Info';
-import TopNavPortal from '../../../components/TopNavPortal';
+import TopNavPortal from '../../../components/elements/TopNavPortal';
 import Button from '@mui/material/Button';
+import { useGtbOsForms } from '../../../hooks/clients/use-gtb-os-forms';
 
 
 export interface GtbOsFormsResponse {
@@ -36,7 +36,7 @@ export interface GtbOsFormsResponse {
 
 
 const GtbOsIndex: NextPage = () => {
-    const response = useSWR<GtbOsFormsResponse>('/data/gtb-os-forms.json');
+    const response = useGtbOsForms();
     const forms = response.data?.data;
 
     return (

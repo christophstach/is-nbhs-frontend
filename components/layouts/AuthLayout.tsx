@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import { FunctionComponent } from 'react';
-import Copyright from './Copyright';
+import Copyright from '../elements/Copyright';
 
 const theme = createTheme();
 

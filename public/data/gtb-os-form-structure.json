@@ -1,0 +1,246 @@
+{
+  "data": {
+    "elements": [
+      {
+        "type": "timeSpan",
+        "name": "timeSpan",
+        "label": "Zeitraum",
+        "from": {
+          "value": "Mon Nov 22 2021 11:24:12 GMT+0100 (Central European Standard Time)",
+          "disabled": false
+        },
+        "to": {
+          "value": "Sun Nov 26 2021 11:24:12 GMT+0100 (Central European Standard Time)",
+          "disabled": false
+        }
+      },
+      {
+        "type": "subForm",
+        "label": "Beratungen (SuS, LuL, Eltern)"
+      },
+      {
+        "type": "weekAcquisitionList",
+        "name": "consulting",
+        "items": [
+          {
+            "name": {
+              "value": "Kurzberatung",
+              "disabled": true
+            },
+            "monday": {
+              "value": 0,
+              "disabled": false
+            },
+            "tuesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "wednesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "thursday": {
+              "value": 0,
+              "disabled": false
+            },
+            "friday": {
+              "value": 0,
+              "disabled": false
+            },
+            "saturday": {
+              "value": 0,
+              "disabled": false
+            },
+            "sunday": {
+              "value": 0,
+              "disabled": false
+            }
+          },
+          {
+            "name": {
+              "value": "Beratungen > 15 min",
+              "disabled": true
+            },
+            "monday": {
+              "value": 0,
+              "disabled": false
+            },
+            "tuesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "wednesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "thursday": {
+              "value": 0,
+              "disabled": false
+            },
+            "friday": {
+              "value": 0,
+              "disabled": false
+            },
+            "saturday": {
+              "value": 0,
+              "disabled": false
+            },
+            "sunday": {
+              "value": 0,
+              "disabled": false
+            }
+          },
+          {
+            "name": {
+              "value": "zu beratende Personen",
+              "disabled": true
+            },
+            "monday": {
+              "value": 0,
+              "disabled": false
+            },
+            "tuesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "wednesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "thursday": {
+              "value": 0,
+              "disabled": false
+            },
+            "friday": {
+              "value": 0,
+              "disabled": false
+            },
+            "saturday": {
+              "value": 0,
+              "disabled": false
+            },
+            "sunday": {
+              "value": 0,
+              "disabled": false
+            }
+          }
+        ],
+        "extendable": false
+      },
+      {
+        "type": "subForm",
+        "label": "Beratungsthemen"
+      },
+      {
+        "type": "weekAcquisitionList",
+        "name": "consultingTopics",
+        "items": [
+          {
+            "name": {
+              "value": "psychosoziale Beratung",
+              "disabled": true
+            },
+            "monday": {
+              "value": 0,
+              "disabled": false
+            },
+            "tuesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "wednesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "thursday": {
+              "value": 0,
+              "disabled": false
+            },
+            "friday": {
+              "value": 0,
+              "disabled": false
+            },
+            "saturday": {
+              "value": 0,
+              "disabled": false
+            },
+            "sunday": {
+              "value": 0,
+              "disabled": false
+            }
+          },
+          {
+            "name": {
+              "value": "Konflikt",
+              "disabled": true
+            },
+            "monday": {
+              "value": 0,
+              "disabled": false
+            },
+            "tuesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "wednesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "thursday": {
+              "value": 0,
+              "disabled": false
+            },
+            "friday": {
+              "value": 0,
+              "disabled": false
+            },
+            "saturday": {
+              "value": 0,
+              "disabled": false
+            },
+            "sunday": {
+              "value": 0,
+              "disabled": false
+            }
+          }
+        ],
+        "extendable": true
+      },
+      {
+        "type": "subForm",
+        "label": "Gruppen und Kurse (sozialpädagogische Gruppenangebote, Klassenangebote, Einzelfallhilfe u.ä.)"
+      },
+      {
+        "type": "subForm",
+        "label": "Besuchende bei sonstigen Aktivitäten (z.B. Pausenangebote, offene Angebote)"
+      },
+      {
+        "type": "subForm",
+        "label": "Ehrenamtliche Mitarbeitende"
+      },
+      {
+        "type": "subForm",
+        "label": "Kontaktaufnahme mit externen Hifsangeboten, Jugendamt, Beratungsstellen etc."
+      },
+      {
+        "type": "subForm",
+        "label": "Gremien, Vernetzung und Kooperation (innerhalb und außerhalb der Schule)"
+      },
+      {
+        "type": "subForm",
+        "label": "Anzahl der Schülerinnen und Schüler an der Schule"
+      },
+      {
+        "type": "subForm",
+        "label": "Bemerkungen"
+      },
+      {
+        "type": "comment",
+        "name": "comment",
+        "label": "Bemerkung",
+        "disabled": false
+      }
+    ]
+  },
+  "meta": {}
+}

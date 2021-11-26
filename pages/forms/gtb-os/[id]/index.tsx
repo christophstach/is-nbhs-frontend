@@ -5,87 +5,23 @@ import { useRouter } from 'next/router';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableContainer from '@mui/material/TableContainer';
-import { Comment, SubForm, TimeSpan, WeekAcquisitionMultiple } from '../../../../components/FormControls';
-import { Card, CardActions } from '@mui/material';
+import { Card, CardActions, LinearProgress, TableCell } from '@mui/material';
 import Button from '@mui/material/Button';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
+import TableRow from '@mui/material/TableRow';
+import TimeSpan from '../../../../components/elements/form/TimeSpan';
+import SubForm from '../../../../components/elements/form/SubForm';
+import WeekAcquisitionList from '../../../../components/elements/form/WeekAcquisitionList';
+import Comment from '../../../../components/elements/form/Comment';
+import { useGtbOsFormStructure } from '../../../../hooks/clients/use-gtb-os-form-structure';
 
-const tableStructure = {
-    elements: [
-        {
-            type: 'timeSpan',
-            name: 'timeSpan',
-            label: 'Zeitraum'
-        },
-        {
-            type: 'subForm',
-            label: 'Beratungen (SuS, LuL, Eltern)'
-        },
-        {
-            type: 'weekAcquisitionMultiple',
-            name: 'consulting',
-            items: [
-                {name: 'Kurzberatung', nameEditable: false, values: [0, 0, 0, 0, 0, 0, 0]},
-                {name: 'Beratungen > 15 min', nameEditable: false, values: [0, 0, 0, 0, 0, 0, 0]},
-                {name: 'zu beratende Personen', nameEditable: false, values: [0, 0, 0, 0, 0, 0, 0]}
-            ],
-            extendable: false
-        },
-        {
-            type: 'subForm',
-            label: 'Beratungsthemen',
-        },
-        {
-            type: 'weekAcquisitionMultiple',
-            name: 'consultingTopics',
-            items: [
-                {name: 'psychosoziale Beratung', nameEditable: false, values: [0, 0, 0, 0, 0, 0, 0]},
-                {name: 'Konflikt', nameEditable: false, values: [0, 0, 0, 0, 0, 0, 0]}
-            ],
-            extendable: true
-        },
-        {
-            type: 'subForm',
-            label: 'Gruppen und Kurse (sozialpädagogische Gruppenangebote, Klassenangebote, Einzelfallhilfe u.ä.)'
-        },
-        {
-            type: 'subForm',
-            label: 'Besuchende bei sonstigen Aktivitäten (z.B. Pausenangebote, offene Angebote)'
-        },
-        {
-            type: 'subForm',
-            label: 'Ehrenamtliche Mitarbeitende'
-        },
-        {
-            type: 'subForm',
-            label: 'Kontaktaufnahme mit externen Hifsangeboten, Jugendamt, Beratungsstellen etc.'
-        },
-
-        {
-            type: 'subForm',
-            label: 'Gremien, Vernetzung und Kooperation (innerhalb und außerhalb der Schule)'
-        },
-
-        {
-            type: 'subForm',
-            label: 'Anzahl der Schülerinnen und Schüler an der Schule'
-        },
-        {
-            type: 'subForm',
-            label: 'Bemerkungen'
-        },
-        {
-            type: 'comment',
-            name: 'comment',
-            label: 'Bemerkung'
-        }
-    ]
-}
 
 const GtbOsSingleIndex: NextPage = () => {
     const router = useRouter();
-    const {id} = router.query;
+    const id = parseInt(router.query.id as string, 10);
     const methods = useForm();
+    const response = useGtbOsFormStructure(id);
+    const formStructure = response.data?.data;
 
     const formSubmitHandler: SubmitHandler<any> = (data) => {
         console.log('form data', data);
@@ -107,33 +43,32 @@ const GtbOsSingleIndex: NextPage = () => {
                         <TableContainer>
                             <Table size="small">
                                 <TableBody>
-                                    {tableStructure.elements.map((element, indexElement) => {
+                                    {!response.isLoading ? formStructure?.elements.map((element, index) => {
                                         switch (element.type) {
                                             case 'timeSpan':
                                                 return (
-                                                    <TimeSpan key={indexElement}
-                                                              name={element.name as string}
-                                                              label={element.label as string}/>
+                                                    <TimeSpan key={index} {...element} />
                                                 )
                                             case 'subForm':
                                                 return (
-                                                    <SubForm key={indexElement} label={element.label as string}/>
+                                                    <SubForm key={index} {...element} />
                                                 );
                                             case 'comment':
                                                 return (
-                                                    <Comment key={indexElement}
-                                                             name={element.name as string}
-                                                             label={element.label as string}/>
+                                                    <Comment key={index} {...element}/>
                                                 )
-                                            case 'weekAcquisitionMultiple':
+                                            case 'weekAcquisitionList':
                                                 return (
-                                                    <WeekAcquisitionMultiple key={indexElement}
-                                                                             name={element.name as string}
-                                                                             extendable={element.extendable as boolean}
-                                                                             items={element.items as any}/>
+                                                    <WeekAcquisitionList key={index} {...element}/>
                                                 )
                                         }
-                                    })}
+                                    }) : (
+                                        <TableRow>
+                                            <TableCell colSpan={9}>
+                                                <LinearProgress/>
+                                            </TableCell>
+                                        </TableRow>
+                                    )}
                                 </TableBody>
                             </Table>
                         </TableContainer>

@@ -16,4 +16,4 @@ const Copyright: FunctionComponent = () => {
     );
 }
 
-export default Copyright
+export default Copyright;

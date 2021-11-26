@@ -24,4 +24,4 @@ const TopNavPortal: FunctionComponent = ({children}) => {
 }
 
 
-export default TopNavPortal
+export default TopNavPortal;

@@ -1,72 +1,43 @@
 import * as React from 'react';
 import { FunctionComponent, useState } from 'react';
+import { Controller, useFormContext } from 'react-hook-form';
 import TableRow from '@mui/material/TableRow';
 import { TableCell, TextField } from '@mui/material';
 import Button from '@mui/material/Button';
-import { Controller, useFormContext } from "react-hook-form";
 
-export interface TimeSpanProps {
-    name: string;
-    label: string;
+export interface WeekAcquisitionListItem {
+    name: { value: string; disabled: boolean; };
+    monday: { value: number; disabled: boolean; };
+    tuesday: { value: number; disabled: boolean; };
+    wednesday: { value: number; disabled: boolean; };
+    thursday: { value: number; disabled: boolean; };
+    friday: { value: number; disabled: boolean; };
+    saturday: { value: number; disabled: boolean; };
+    sunday: { value: number; disabled: boolean; };
 }
 
-export const TimeSpan: FunctionComponent<TimeSpanProps> = (props) => {
-    return (
-        <TableRow>
-            <TableCell>{props.label}</TableCell>
-            <TableCell colSpan={8}>Test</TableCell>
-        </TableRow>
-
-    )
-}
-
-export interface SubFormProps {
-    label: string;
-}
-
-export const SubForm: FunctionComponent<SubFormProps> = (props) => {
-    return (
-        <TableRow>
-            <TableCell colSpan={9} sx={{backgroundColor: '#EEEEEE'}}>
-                <h3>{props.label}</h3>
-            </TableCell>
-        </TableRow>
-    );
-}
-
-export interface WeekAcquisitionItem {
-    name: string;
-    monday: number;
-    tuesday: number;
-    wednesday: number;
-    thursday: number;
-    friday: number;
-    saturday: number;
-    sunday: number;
-}
-
-export interface WeekAcquisitionMultipleProps {
+export interface WeekAcquisitionListProps {
     extendable: boolean;
     name: string;
-    items: WeekAcquisitionItem[];
+    items: WeekAcquisitionListItem[];
 }
 
-export const WeekAcquisitionMultiple: FunctionComponent<WeekAcquisitionMultipleProps> = (props) => {
-    const [items, setItems] = useState<WeekAcquisitionItem[]>(props.items);
+const WeekAcquisitionList: FunctionComponent<WeekAcquisitionListProps> = (props) => {
+    const [items, setItems] = useState<WeekAcquisitionListItem[]>(props.items);
     const {control, watch} = useFormContext();
     const watchFields = watch();
 
 
     function handleAddItem() {
         const newItem = {
-            name: '',
-            monday: 0,
-            tuesday: 0,
-            wednesday: 0,
-            thursday: 0,
-            friday: 0,
-            saturday: 0,
-            sunday: 0
+            name: {value: '', disabled: false},
+            monday: {value: 0, disabled: false},
+            tuesday: {value: 0, disabled: false},
+            wednesday: {value: 0, disabled: false},
+            thursday: {value: 0, disabled: false},
+            friday: {value: 0, disabled: false},
+            saturday: {value: 0, disabled: false},
+            sunday: {value: 0, disabled: false}
         };
 
         setItems([
@@ -84,12 +55,13 @@ export const WeekAcquisitionMultiple: FunctionComponent<WeekAcquisitionMultipleP
                         <TableCell sx={{width: '100%'}}>
                             <Controller name={`${props.name}.${index}.name`}
                                         control={control}
-                                        defaultValue={item.name}
+                                        defaultValue={item.name.value}
                                         render={({field}) => (
                                             <TextField {...field}
                                                        label="Name"
                                                        variant="filled"
                                                        size="small"
+                                                       disabled={item.name.disabled}
                                                        sx={{width: '100%'}}/>
                                         )}/>
 
@@ -97,7 +69,7 @@ export const WeekAcquisitionMultiple: FunctionComponent<WeekAcquisitionMultipleP
                         <TableCell>
                             <Controller name={`${props.name}.${index}.monday`}
                                         control={control}
-                                        defaultValue={0}
+                                        defaultValue={item.monday.value}
                                         render={({field}) => (
                                             <TextField {...field}
                                                        label="Mo"
@@ -108,13 +80,14 @@ export const WeekAcquisitionMultiple: FunctionComponent<WeekAcquisitionMultipleP
                                                        }}
                                                        InputProps={{inputProps: {min: 0, step: 1}}}
                                                        type="number"
+                                                       disabled={item.monday.disabled}
                                                        sx={{width: '80px'}}/>
                                         )}/>
                         </TableCell>
                         <TableCell>
                             <Controller name={`${props.name}.${index}.tuesday`}
                                         control={control}
-                                        defaultValue={0}
+                                        defaultValue={item.tuesday.value}
                                         render={({field}) => (
                                             <TextField {...field}
                                                        label="Di"
@@ -123,13 +96,14 @@ export const WeekAcquisitionMultiple: FunctionComponent<WeekAcquisitionMultipleP
                                                        onChange={(e) => field.onChange(parseInt(e.target.value), 10)}
                                                        InputProps={{inputProps: {min: 0, step: 1}}}
                                                        type="number"
+                                                       disabled={item.tuesday.disabled}
                                                        sx={{width: '80px'}}/>
                                         )}/>
                         </TableCell>
                         <TableCell>
                             <Controller name={`${props.name}.${index}.wednesday`}
                                         control={control}
-                                        defaultValue={0}
+                                        defaultValue={item.wednesday.value}
                                         render={({field}) => (
                                             <TextField {...field}
                                                        label="Mi"
@@ -138,13 +112,14 @@ export const WeekAcquisitionMultiple: FunctionComponent<WeekAcquisitionMultipleP
                                                        onChange={(e) => field.onChange(parseInt(e.target.value), 10)}
                                                        InputProps={{inputProps: {min: 0, step: 1}}}
                                                        type="number"
+                                                       disabled={item.wednesday.disabled}
                                                        sx={{width: '80px'}}/>
                                         )}/>
                         </TableCell>
                         <TableCell>
                             <Controller name={`${props.name}.${index}.thursday`}
                                         control={control}
-                                        defaultValue={0}
+                                        defaultValue={item.thursday.value}
                                         render={({field}) => (
                                             <TextField {...field}
                                                        label="Do"
@@ -153,13 +128,14 @@ export const WeekAcquisitionMultiple: FunctionComponent<WeekAcquisitionMultipleP
                                                        onChange={(e) => field.onChange(parseInt(e.target.value), 10)}
                                                        InputProps={{inputProps: {min: 0, step: 1}}}
                                                        type="number"
+                                                       disabled={item.thursday.disabled}
                                                        sx={{width: '80px'}}/>
                                         )}/>
                         </TableCell>
                         <TableCell>
                             <Controller name={`${props.name}.${index}.friday`}
                                         control={control}
-                                        defaultValue={0}
+                                        defaultValue={item.friday.value}
                                         render={({field}) => (
                                             <TextField {...field}
                                                        label="fr"
@@ -168,13 +144,14 @@ export const WeekAcquisitionMultiple: FunctionComponent<WeekAcquisitionMultipleP
                                                        onChange={(e) => field.onChange(parseInt(e.target.value), 10)}
                                                        InputProps={{inputProps: {min: 0, step: 1}}}
                                                        type="number"
+                                                       disabled={item.friday.disabled}
                                                        sx={{width: '80px'}}/>
                                         )}/>
                         </TableCell>
                         <TableCell>
                             <Controller name={`${props.name}.${index}.saturday`}
                                         control={control}
-                                        defaultValue={0}
+                                        defaultValue={item.saturday.value}
                                         render={({field}) => (
                                             <TextField {...field}
                                                        label="Sa"
@@ -183,13 +160,14 @@ export const WeekAcquisitionMultiple: FunctionComponent<WeekAcquisitionMultipleP
                                                        onChange={(e) => field.onChange(parseInt(e.target.value), 10)}
                                                        InputProps={{inputProps: {min: 0, step: 1}}}
                                                        type="number"
+                                                       disabled={item.saturday.disabled}
                                                        sx={{width: '80px'}}/>
                                         )}/>
                         </TableCell>
                         <TableCell>
                             <Controller name={`${props.name}.${index}.sunday`}
                                         control={control}
-                                        defaultValue={0}
+                                        defaultValue={item.sunday.value}
                                         render={({field}) => (
                                             <TextField {...field}
                                                        label="So"
@@ -198,6 +176,7 @@ export const WeekAcquisitionMultiple: FunctionComponent<WeekAcquisitionMultipleP
                                                        onChange={(e) => field.onChange(parseInt(e.target.value), 10)}
                                                        InputProps={{inputProps: {min: 0, step: 1}}}
                                                        type="number"
+                                                       disabled={item.sunday.disabled}
                                                        sx={{width: '80px'}}/>
                                         )}/>
                         </TableCell>
@@ -246,35 +225,4 @@ export const WeekAcquisitionMultiple: FunctionComponent<WeekAcquisitionMultipleP
     );
 }
 
-
-export interface OneTimeAcquisitionProps {
-
-}
-
-
-export interface CommentProps {
-    name: string;
-    label: string;
-}
-
-export const Comment: FunctionComponent<CommentProps> = (props) => {
-    const {control} = useFormContext();
-
-    return (
-        <>
-            <TableRow>
-                <TableCell colSpan={9}>
-                    <Controller name={props.name} control={control} defaultValue="" render={({field}) => (
-                        <TextField {...field}
-                                   label={props.label}
-                                   variant="filled"
-                                   size="small"
-                                   rows={6}
-                                   multiline
-                                   fullWidth/>
-                    )}/>
-                </TableCell>
-            </TableRow>
-        </>
-    )
-}
+export default WeekAcquisitionList;

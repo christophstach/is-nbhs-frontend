@@ -8,10 +8,10 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Copyright from './Copyright';
+import Copyright from '../elements/Copyright';
 import { Divider, IconButton, Menu, MenuItem } from '@mui/material';
 import { AccountCircle } from '@mui/icons-material';
-import SideNav from './SideNav';
+import SideNav from '../elements/SideNav';
 
 
 const drawerWidth: number = 300;
