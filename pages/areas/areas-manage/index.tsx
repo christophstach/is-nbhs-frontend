@@ -8,15 +8,14 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import useSWR from 'swr'
 import { format } from 'date-fns'
 import { IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-import CheckIcon from '@mui/icons-material/Check';
 import InfoIcon from '@mui/icons-material/Info';
-import TopNavPortal from '../../../components/TopNavPortal';
+import TopNavPortal from '../../../components/elements/TopNavPortal';
 import Button from '@mui/material/Button';
+import { useAreasManage } from '../../../hooks/clients/use-areas-manage';
 
 export interface AreasManageResponse {
         data: {
@@ -28,7 +27,7 @@ export interface AreasManageResponse {
 }
 
 const AreasManageIndex: NextPage = () => {
-    const response = useSWR<AreasManageResponse>('/data/areas-manage.json');
+    const response = useAreasManage();
     const areas = response.data?.data;
 
     return (
@@ -61,11 +60,11 @@ const AreasManageIndex: NextPage = () => {
             <TableCell>{area.comment}</TableCell>
 
             <TableCell sx={{whiteSpace: 'nowrap'}}>
-            <IconButton component="a" href={`/areas/Areas-Manage/${area.id}`}>
+            <IconButton component="a" href={`/areas/areas-manage/${area.id}`}>
             <EditIcon color="warning"/></IconButton>
-            <IconButton component="a" href={`/areas/Areas-Manage/${area.id}/delete`}>
+            <IconButton component="a" href={`/areas/areas-manage/${area.id}/delete`}>
             <DeleteIcon color="error"/></IconButton>
-            <IconButton component="a" href={`/areas/Areas-Manage/${area.id}/review`}>
+            <IconButton component="a" href={`/areas/areas-manage/${area.id}/review`}>
             <InfoIcon color="info"/></IconButton>
              </TableCell>
             </TableRow>
