@@ -14,8 +14,13 @@ import HouseIcon from '@mui/icons-material/House';
 import Link from 'next/link';
 
 const SideNav: FunctionComponent = () => {
+    const [AreasOpen, setAreasOpen] = React.useState(false);
     const [formsOpen, setFormsOpen] = React.useState(false);
     const [statisticsOpen, setStatisticsOpen] = React.useState(false);
+
+    function handleOpenCloseAreas() {
+        setAreasOpen(!AreasOpen);
+    }
 
     function handleOpenCloseForms() {
         setFormsOpen(!formsOpen);
@@ -40,7 +45,6 @@ const SideNav: FunctionComponent = () => {
 
             <ListItem disablePadding>
                 <ListItemButton onClick={handleOpenCloseAreas}>
-                    <ListItemButton component="a">
                         <ListItemIcon>
                             <HouseIcon/>
                         </ListItemIcon>
@@ -50,8 +54,8 @@ const SideNav: FunctionComponent = () => {
             </ListItem>
 
             <Collapse in={AreasOpen} timeout="auto" unmountOnExit>
-            <Divider/>
-            <List component="div" disablePadding>
+                <Divider/>
+                <List component="div" disablePadding>
                 <ListItem disablePadding>
                     <Link href="/areas/areas-manage" passHref>
                         <ListItemButton component="a">
@@ -66,8 +70,8 @@ const SideNav: FunctionComponent = () => {
                         </ListItemButton>
                     </Link>
                 </ListItem>
-            </List>
-            <Divider/>
+                </List>
+                <Divider/>
         </Collapse>
 
             <ListItem disablePadding>
