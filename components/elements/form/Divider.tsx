@@ -3,11 +3,11 @@ import { FunctionComponent } from 'react';
 import TableRow from '@mui/material/TableRow';
 import { TableCell } from '@mui/material';
 
-export interface SubFormProps {
+export interface DividerProps {
     label: string;
 }
 
-const SubForm: FunctionComponent<SubFormProps> = (props) => {
+const Divider: FunctionComponent<DividerProps> = (props) => {
     return (
         <TableRow>
             <TableCell colSpan={9} sx={{backgroundColor: '#EEEEEE'}}>
@@ -17,5 +17,5 @@ const SubForm: FunctionComponent<SubFormProps> = (props) => {
     );
 }
 
-export default SubForm;
+export default Divider;
 

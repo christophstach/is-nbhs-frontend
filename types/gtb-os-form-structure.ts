@@ -1,31 +1,37 @@
 import { TimeSpanProps } from '../components/elements/form/TimeSpan';
-import { SubFormProps } from '../components/elements/form/SubForm';
+import { DividerProps } from '../components/elements/form/Divider';
 import { CommentProps } from '../components/elements/form/Comment';
 import { WeekAcquisitionListProps } from '../components/elements/form/WeekAcquisitionList';
+import { NumberProps } from '../components/elements/form/Number';
 
 
 interface TimeSpanElement extends TimeSpanProps {
-    type: 'timeSpan'
+    type: 'timeSpan';
 }
 
-interface SubFormElement extends SubFormProps {
-    type: 'subForm'
+interface DividerElement extends DividerProps {
+    type: 'divider';
 }
 
 interface WeekAcquisitionMultipleElement extends WeekAcquisitionListProps {
-    type: 'weekAcquisitionList'
+    type: 'weekAcquisitionList';
 }
 
 interface CommentElement extends CommentProps {
-    type: 'comment'
+    type: 'comment';
+}
+
+export interface NumberElement extends NumberProps {
+    type: 'number';
 }
 
 export interface GtbOsFormStructureResponse {
     data: {
         elements: (
             TimeSpanElement
-            | SubFormElement
+            | DividerElement
             | WeekAcquisitionMultipleElement
+            | NumberElement
             | CommentElement)[];
     };
     meta: {};

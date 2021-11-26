@@ -61,6 +61,7 @@ const WeekAcquisitionList: FunctionComponent<WeekAcquisitionListProps> = (props)
                                                        label="Name"
                                                        variant="filled"
                                                        size="small"
+                                                       required
                                                        disabled={item.name.disabled}
                                                        sx={{width: '100%'}}/>
                                         )}/>
@@ -73,10 +74,15 @@ const WeekAcquisitionList: FunctionComponent<WeekAcquisitionListProps> = (props)
                                         render={({field}) => (
                                             <TextField {...field}
                                                        label="Mo"
+                                                       required
                                                        variant="filled"
                                                        size="small"
                                                        onChange={(e) => {
-                                                           field.onChange(parseInt(e.target.value), 10);
+                                                           if (e.target.value === '') {
+                                                               field.onChange(0);
+                                                           } else {
+                                                               field.onChange(parseInt(e.target.value), 10);
+                                                           }
                                                        }}
                                                        InputProps={{inputProps: {min: 0, step: 1}}}
                                                        type="number"
@@ -91,9 +97,16 @@ const WeekAcquisitionList: FunctionComponent<WeekAcquisitionListProps> = (props)
                                         render={({field}) => (
                                             <TextField {...field}
                                                        label="Di"
+                                                       required
                                                        variant="filled"
                                                        size="small"
-                                                       onChange={(e) => field.onChange(parseInt(e.target.value), 10)}
+                                                       onChange={(e) => {
+                                                           if (e.target.value === '') {
+                                                               field.onChange(0);
+                                                           } else {
+                                                               field.onChange(parseInt(e.target.value), 10);
+                                                           }
+                                                       }}
                                                        InputProps={{inputProps: {min: 0, step: 1}}}
                                                        type="number"
                                                        disabled={item.tuesday.disabled}
@@ -107,9 +120,16 @@ const WeekAcquisitionList: FunctionComponent<WeekAcquisitionListProps> = (props)
                                         render={({field}) => (
                                             <TextField {...field}
                                                        label="Mi"
+                                                       required
                                                        variant="filled"
                                                        size="small"
-                                                       onChange={(e) => field.onChange(parseInt(e.target.value), 10)}
+                                                       onChange={(e) => {
+                                                           if (e.target.value === '') {
+                                                               field.onChange(0);
+                                                           } else {
+                                                               field.onChange(parseInt(e.target.value), 10);
+                                                           }
+                                                       }}
                                                        InputProps={{inputProps: {min: 0, step: 1}}}
                                                        type="number"
                                                        disabled={item.wednesday.disabled}
@@ -123,9 +143,16 @@ const WeekAcquisitionList: FunctionComponent<WeekAcquisitionListProps> = (props)
                                         render={({field}) => (
                                             <TextField {...field}
                                                        label="Do"
+                                                       required
                                                        variant="filled"
                                                        size="small"
-                                                       onChange={(e) => field.onChange(parseInt(e.target.value), 10)}
+                                                       onChange={(e) => {
+                                                           if (e.target.value === '') {
+                                                               field.onChange(0);
+                                                           } else {
+                                                               field.onChange(parseInt(e.target.value), 10);
+                                                           }
+                                                       }}
                                                        InputProps={{inputProps: {min: 0, step: 1}}}
                                                        type="number"
                                                        disabled={item.thursday.disabled}
@@ -139,9 +166,16 @@ const WeekAcquisitionList: FunctionComponent<WeekAcquisitionListProps> = (props)
                                         render={({field}) => (
                                             <TextField {...field}
                                                        label="fr"
+                                                       required
                                                        variant="filled"
                                                        size="small"
-                                                       onChange={(e) => field.onChange(parseInt(e.target.value), 10)}
+                                                       onChange={(e) => {
+                                                           if (e.target.value === '') {
+                                                               field.onChange(0);
+                                                           } else {
+                                                               field.onChange(parseInt(e.target.value), 10);
+                                                           }
+                                                       }}
                                                        InputProps={{inputProps: {min: 0, step: 1}}}
                                                        type="number"
                                                        disabled={item.friday.disabled}
@@ -155,9 +189,16 @@ const WeekAcquisitionList: FunctionComponent<WeekAcquisitionListProps> = (props)
                                         render={({field}) => (
                                             <TextField {...field}
                                                        label="Sa"
+                                                       required
                                                        variant="filled"
                                                        size="small"
-                                                       onChange={(e) => field.onChange(parseInt(e.target.value), 10)}
+                                                       onChange={(e) => {
+                                                           if (e.target.value === '') {
+                                                               field.onChange(0);
+                                                           } else {
+                                                               field.onChange(parseInt(e.target.value), 10);
+                                                           }
+                                                       }}
                                                        InputProps={{inputProps: {min: 0, step: 1}}}
                                                        type="number"
                                                        disabled={item.saturday.disabled}
@@ -171,9 +212,16 @@ const WeekAcquisitionList: FunctionComponent<WeekAcquisitionListProps> = (props)
                                         render={({field}) => (
                                             <TextField {...field}
                                                        label="So"
+                                                       required
                                                        variant="filled"
                                                        size="small"
-                                                       onChange={(e) => field.onChange(parseInt(e.target.value), 10)}
+                                                       onChange={(e) => {
+                                                           if (e.target.value === '') {
+                                                               field.onChange(0);
+                                                           } else {
+                                                               field.onChange(parseInt(e.target.value), 10);
+                                                           }
+                                                       }}
                                                        InputProps={{inputProps: {min: 0, step: 1}}}
                                                        type="number"
                                                        disabled={item.sunday.disabled}
@@ -195,13 +243,13 @@ const WeekAcquisitionList: FunctionComponent<WeekAcquisitionListProps> = (props)
                                 {
                                     watchFields[props.name] && watchFields[props.name][index] ? (
                                         <>{
-                                            watchFields[props.name][index].monday +
-                                            watchFields[props.name][index].tuesday +
-                                            watchFields[props.name][index].wednesday +
-                                            watchFields[props.name][index].thursday +
-                                            watchFields[props.name][index].friday +
-                                            watchFields[props.name][index].saturday +
-                                            watchFields[props.name][index].sunday
+                                            (watchFields[props.name][index].monday ? watchFields[props.name][index].monday : 0) +
+                                            (watchFields[props.name][index].tuesday ? watchFields[props.name][index].tuesday : 0) +
+                                            (watchFields[props.name][index].wednesday ? watchFields[props.name][index].wednesday : 0) +
+                                            (watchFields[props.name][index].thursday ? watchFields[props.name][index].thursday : 0) +
+                                            (watchFields[props.name][index].friday ? watchFields[props.name][index].friday : 0) +
+                                            (watchFields[props.name][index].saturday ? watchFields[props.name][index].saturday : 0) +
+                                            (watchFields[props.name][index].sunday ? watchFields[props.name][index].sunday : 0)
                                         }</>
                                     ) : (
                                         <>0</>

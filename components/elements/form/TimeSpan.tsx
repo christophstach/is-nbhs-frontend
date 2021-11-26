@@ -35,7 +35,12 @@ const TimeSpan: FunctionComponent<TimeSpanProps> = (props) => {
                                     }}
                                     renderInput={(params: any) => {
                                         return (
-                                            <TextField {...params} sx={{width: '100%'}}/>
+                                            <TextField {...params}
+                                                       required
+                                                       sx={{width: '100%'}}
+                                                       variant="filled"
+                                                       size="small"
+                                            />
                                         );
                                     }}
                                 />
@@ -48,7 +53,7 @@ const TimeSpan: FunctionComponent<TimeSpanProps> = (props) => {
                             render={({field}) => (
                                 <DatePicker
                                     mask="__.__.____"
-                                    label="Von"
+                                    label="Bis"
                                     disabled={props.to.disabled}
                                     {...field}
                                     onChange={(date) => {
@@ -56,7 +61,12 @@ const TimeSpan: FunctionComponent<TimeSpanProps> = (props) => {
                                     }}
                                     renderInput={(params: any) => {
                                         return (
-                                            <TextField {...params} sx={{width: '100%'}}/>
+                                            <TextField {...params}
+                                                       required
+                                                       sx={{width: '100%'}}
+                                                       variant="filled"
+                                                       size="small"
+                                            />
                                         );
                                     }}
                                 />

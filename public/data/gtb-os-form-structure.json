@@ -15,7 +15,7 @@
         }
       },
       {
-        "type": "subForm",
+        "type": "divider",
         "label": "Beratungen (SuS, LuL, Eltern)"
       },
       {
@@ -89,46 +89,22 @@
               "value": 0,
               "disabled": false
             }
-          },
-          {
-            "name": {
-              "value": "zu beratende Personen",
-              "disabled": true
-            },
-            "monday": {
-              "value": 0,
-              "disabled": false
-            },
-            "tuesday": {
-              "value": 0,
-              "disabled": false
-            },
-            "wednesday": {
-              "value": 0,
-              "disabled": false
-            },
-            "thursday": {
-              "value": 0,
-              "disabled": false
-            },
-            "friday": {
-              "value": 0,
-              "disabled": false
-            },
-            "saturday": {
-              "value": 0,
-              "disabled": false
-            },
-            "sunday": {
-              "value": 0,
-              "disabled": false
-            }
           }
         ],
         "extendable": false
       },
       {
-        "type": "subForm",
+        "type": "number",
+        "name": "consultees",
+        "label": "Zu beratende Personen",
+        "value": 0,
+        "disabled": false,
+        "min": 0,
+        "max": null,
+        "step": 1.00
+      },
+      {
+        "type": "divider",
         "label": "Beratungsthemen"
       },
       {
@@ -207,37 +183,259 @@
         "extendable": true
       },
       {
-        "type": "subForm",
+        "type": "divider",
         "label": "Gruppen und Kurse (sozialpädagogische Gruppenangebote, Klassenangebote, Einzelfallhilfe u.ä.)"
       },
       {
-        "type": "subForm",
+        "type": "weekAcquisitionList",
+        "name": "groupsAndClasses",
+        "extendable": true,
+        "items": []
+      },
+      {
+        "type": "divider",
         "label": "Besuchende bei sonstigen Aktivitäten (z.B. Pausenangebote, offene Angebote)"
       },
       {
-        "type": "subForm",
+        "type": "weekAcquisitionList",
+        "name": "visitorsOfOtherActivities",
+        "extendable": true,
+        "items": []
+      },
+      {
+        "type": "divider",
         "label": "Ehrenamtliche Mitarbeitende"
       },
       {
-        "type": "subForm",
+        "type": "weekAcquisitionList",
+        "name": "volunteers",
+        "extendable": false,
+        "items": [
+          {
+            "name": {
+              "value": "regelmäßiges Engagement",
+              "disabled": true
+            },
+            "monday": {
+              "value": 0,
+              "disabled": false
+            },
+            "tuesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "wednesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "thursday": {
+              "value": 0,
+              "disabled": false
+            },
+            "friday": {
+              "value": 0,
+              "disabled": false
+            },
+            "saturday": {
+              "value": 0,
+              "disabled": false
+            },
+            "sunday": {
+              "value": 0,
+              "disabled": false
+            }
+          },
+          {
+            "name": {
+              "value": "kurzfristiges Engagement",
+              "disabled": true
+            },
+            "monday": {
+              "value": 0,
+              "disabled": false
+            },
+            "tuesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "wednesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "thursday": {
+              "value": 0,
+              "disabled": false
+            },
+            "friday": {
+              "value": 0,
+              "disabled": false
+            },
+            "saturday": {
+              "value": 0,
+              "disabled": false
+            },
+            "sunday": {
+              "value": 0,
+              "disabled": false
+            }
+          }
+        ]
+      },
+      {
+        "type": "divider",
         "label": "Kontaktaufnahme mit externen Hifsangeboten, Jugendamt, Beratungsstellen etc."
       },
       {
-        "type": "subForm",
+        "type": "weekAcquisitionList",
+        "name": "contacts",
+        "extendable": false,
+        "items": [
+          {
+            "name": {
+              "value": "Anzahl",
+              "disabled": true
+            },
+            "monday": {
+              "value": 0,
+              "disabled": false
+            },
+            "tuesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "wednesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "thursday": {
+              "value": 0,
+              "disabled": false
+            },
+            "friday": {
+              "value": 0,
+              "disabled": false
+            },
+            "saturday": {
+              "value": 0,
+              "disabled": false
+            },
+            "sunday": {
+              "value": 0,
+              "disabled": false
+            }
+          }
+        ]
+      },
+      {
+        "type": "number",
+        "name": "monthlyMean",
+        "label": "Monatsmittel",
+        "value": 0,
+        "min": 0,
+        "step": 1,
+        "max": null
+      },
+      {
+        "type": "divider",
         "label": "Gremien, Vernetzung und Kooperation (innerhalb und außerhalb der Schule)"
       },
       {
-        "type": "subForm",
+        "type": "weekAcquisitionList",
+        "name": "cooperations",
+        "extendable": false,
+        "items": [
+          {
+            "name": {
+              "value": "innerhalb der Schule",
+              "disabled": true
+            },
+            "monday": {
+              "value": 0,
+              "disabled": false
+            },
+            "tuesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "wednesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "thursday": {
+              "value": 0,
+              "disabled": false
+            },
+            "friday": {
+              "value": 0,
+              "disabled": false
+            },
+            "saturday": {
+              "value": 0,
+              "disabled": false
+            },
+            "sunday": {
+              "value": 0,
+              "disabled": false
+            }
+          },
+          {
+            "name": {
+              "value": "außerhalb der Schule der Schule",
+              "disabled": true
+            },
+            "monday": {
+              "value": 0,
+              "disabled": false
+            },
+            "tuesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "wednesday": {
+              "value": 0,
+              "disabled": false
+            },
+            "thursday": {
+              "value": 0,
+              "disabled": false
+            },
+            "friday": {
+              "value": 0,
+              "disabled": false
+            },
+            "saturday": {
+              "value": 0,
+              "disabled": false
+            },
+            "sunday": {
+              "value": 0,
+              "disabled": false
+            }
+          }
+        ]
+      },
+      {
+        "type": "divider",
         "label": "Anzahl der Schülerinnen und Schüler an der Schule"
       },
       {
-        "type": "subForm",
+        "type": "number",
+        "name": "pupils",
+        "label": "Schülerinnen und Schüler",
+        "value": 0,
+        "min": 0,
+        "step": 1,
+        "max": null
+      },
+      {
+        "type": "divider",
         "label": "Bemerkungen"
       },
       {
         "type": "comment",
         "name": "comment",
         "label": "Bemerkung",
+        "value": "",
         "disabled": false
       }
     ]

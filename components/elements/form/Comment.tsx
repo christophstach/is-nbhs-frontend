@@ -8,6 +8,7 @@ import { TableCell, TextField } from '@mui/material';
 export interface CommentProps {
     name: string;
     label: string;
+    value: string;
     disabled: boolean;
 }
 
@@ -15,21 +16,20 @@ const Comment: FunctionComponent<CommentProps> = (props) => {
     const {control} = useFormContext();
 
     return (
-        <>
-            <TableRow>
-                <TableCell colSpan={9}>
-                    <Controller name={props.name} control={control} defaultValue="" render={({field}) => (
-                        <TextField {...field}
-                                   label={props.label}
-                                   variant="filled"
-                                   size="small"
-                                   rows={6}
-                                   multiline
-                                   fullWidth/>
-                    )}/>
-                </TableCell>
-            </TableRow>
-        </>
+        <TableRow>
+            <TableCell colSpan={9}>
+                <Controller name={props.name} control={control} defaultValue={props.value} render={({field}) => (
+                    <TextField {...field}
+                               label={props.label}
+                               disabled={props.disabled}
+                               variant="filled"
+                               size="small"
+                               rows={6}
+                               multiline
+                               fullWidth/>
+                )}/>
+            </TableCell>
+        </TableRow>
     )
 }
 
