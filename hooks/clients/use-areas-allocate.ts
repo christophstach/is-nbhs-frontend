@@ -6,7 +6,7 @@ export function useAreasAllocate() {
     const {
         data,
         error
-    } = useSWR<AreasManageResponse>('/data/areas-allocate.json');
+    } = useSWR<AreasAllocateResponse>('/data/areas-allocate.json');
 
     return {
         data,
