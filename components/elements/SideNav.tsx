@@ -14,8 +14,13 @@ import HouseIcon from '@mui/icons-material/House';
 import Link from 'next/link';
 
 const SideNav: FunctionComponent = () => {
+    const [AreasOpen, setAreasOpen] = React.useState(false);
     const [formsOpen, setFormsOpen] = React.useState(false);
     const [statisticsOpen, setStatisticsOpen] = React.useState(false);
+
+    function handleOpenCloseAreas() {
+        setAreasOpen(!AreasOpen);
+    }
 
     function handleOpenCloseForms() {
         setFormsOpen(!formsOpen);
@@ -39,16 +44,35 @@ const SideNav: FunctionComponent = () => {
             </ListItem>
 
             <ListItem disablePadding>
-                <Link href="/areas" passHref>
-                    <ListItemButton component="a">
+                <ListItemButton onClick={handleOpenCloseAreas}>
                         <ListItemIcon>
                             <HouseIcon/>
                         </ListItemIcon>
                         <ListItemText primary="Bereiche"/>
+                        {AreasOpen ? <IconExpandLess/> : <IconExpandMore/>}
                     </ListItemButton>
-                </Link>
             </ListItem>
 
+            <Collapse in={AreasOpen} timeout="auto" unmountOnExit>
+                <Divider/>
+                <List component="div" disablePadding>
+                <ListItem disablePadding>
+                    <Link href="/areas/areas-manage" passHref>
+                        <ListItemButton component="a">
+                            <ListItemText inset primary="Bereiche verwalten"/>
+                        </ListItemButton>
+                    </Link>
+                </ListItem>
+                <ListItem disablePadding>
+                    <Link href="/areas/areas-allocate" passHref>
+                        <ListItemButton component="a">
+                            <ListItemText inset primary="Bereiche zuordnen"/>
+                        </ListItemButton>
+                    </Link>
+                </ListItem>
+                </List>
+                <Divider/>
+        </Collapse>
 
             <ListItem disablePadding>
                 <ListItemButton onClick={handleOpenCloseForms}>
