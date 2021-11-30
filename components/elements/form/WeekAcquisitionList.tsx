@@ -30,8 +30,6 @@ const WeekAcquisitionListItem: FunctionComponent<WeekAcquisitionListItemProps & 
         sunday: useWatch({control, name: `${props.keyName}.sunday`})
     };
 
-    console.log(watchFields)
-
     return (
         <TableRow>
             <TableCell sx={{width: '100%'}}>
