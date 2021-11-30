@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
 import * as React from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -14,23 +15,31 @@ import Divider from '../../../../components/elements/form/Divider';
 import WeekAcquisitionList from '../../../../components/elements/form/WeekAcquisitionList';
 import Comment from '../../../../components/elements/form/Comment';
 import Number from '../../../../components/elements/form/Number';
-import { useGtbOsFormStructure } from '../../../../hooks/clients/use-gtb-os-form-structure';
+import { useGetGtbOsForm } from '../../../../hooks/clients/use-get-gtb-os-form';
 import TopNavPortal from '../../../../components/elements/TopNavPortal';
+import { GtbOsFormValues } from '../../../../types/get-gtb-os-form-response';
 
 
 const GtbOsSingleIndex: NextPage = () => {
     const router = useRouter();
     const id = parseInt(router.query.id as string, 10);
-    const methods = useForm();
-    const response = useGtbOsFormStructure(id);
-    const formStructure = response.data?.data;
+    const response = useGetGtbOsForm(id);
+    const data = response.data?.data;
+    const values = data?.values;
+    const methods = useForm<GtbOsFormValues>();
+
+    useEffect(() => {
+        if (values) {
+            methods.reset(values);
+        }
+    }, [methods, values]);
 
     function handleSaveClick() {
         methods.handleSubmit(formSubmitHandler)();
     }
 
     const formSubmitHandler: SubmitHandler<any> = (data) => {
-        console.log('form data', data);
+        console.log(data);
     };
 
 
@@ -44,14 +53,16 @@ const GtbOsSingleIndex: NextPage = () => {
                 <form onSubmit={methods.handleSubmit(formSubmitHandler)}>
                     <Card>
                         <TopNavPortal>
-                            <Button type="submit" color="success" variant="contained"
+                            <Button type="submit"
+                                    color="success"
+                                    variant="contained"
                                     onClick={handleSaveClick}>Speichern</Button>
                         </TopNavPortal>
 
                         <TableContainer>
                             <Table size="small">
                                 <TableBody>
-                                    {!response.isLoading ? formStructure?.elements.map((element, index) => {
+                                    {!response.isLoading ? data?.structure.map((element, index) => {
                                         switch (element.type) {
                                             case 'timeSpan':
                                                 return (
@@ -88,7 +99,7 @@ const GtbOsSingleIndex: NextPage = () => {
                 </form>
             </FormProvider>
         </>
-    )
+    );
 }
 
 export default GtbOsSingleIndex;

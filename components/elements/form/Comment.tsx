@@ -6,7 +6,7 @@ import { TableCell, TextField } from '@mui/material';
 
 
 export interface CommentProps {
-    name: string;
+    defaultValue: string;
     label: string;
     value: string;
     disabled: boolean;
@@ -18,7 +18,7 @@ const Comment: FunctionComponent<CommentProps> = (props) => {
     return (
         <TableRow>
             <TableCell colSpan={9}>
-                <Controller name={props.name} control={control} defaultValue={props.value} render={({field}) => (
+                <Controller name={props.defaultValue} control={control} defaultValue={props.value} render={({field}) => (
                     <TextField {...field}
                                label={props.label}
                                disabled={props.disabled}

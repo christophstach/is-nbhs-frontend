@@ -1,16 +1,126 @@
 {
   "data": {
-    "elements": [
+    "values": {
+      "timeSpan": {
+        "from": "2021-11-22T10:24:12.000Z",
+        "to": "2021-11-26T10:24:12.000Z"
+      },
+      "consulting": [
+        {
+          "name": "Kurzberatung",
+          "monday": 10,
+          "tuesday": 0,
+          "wednesday": 0,
+          "thursday": 0,
+          "friday": 15,
+          "saturday": 0,
+          "sunday": 0
+        },
+        {
+          "name": "Beratungen > 15 min",
+          "monday": 0,
+          "tuesday": 0,
+          "wednesday": 0,
+          "thursday": 0,
+          "friday": 0,
+          "saturday": 0,
+          "sunday": 0
+        }
+      ],
+      "consultees": 10,
+      "consultingTopics": [
+        {
+          "name": "psychosoziale Beratung",
+          "monday": 0,
+          "tuesday": 0,
+          "wednesday": 0,
+          "thursday": 0,
+          "friday": 0,
+          "saturday": 0,
+          "sunday": 0
+        },
+        {
+          "name": "Konflikt",
+          "monday": 0,
+          "tuesday": 0,
+          "wednesday": 0,
+          "thursday": 0,
+          "friday": 0,
+          "saturday": 0,
+          "sunday": 0
+        }
+      ],
+      "volunteers": [
+        {
+          "name": "regelmäßiges Engagement",
+          "monday": 0,
+          "tuesday": 0,
+          "wednesday": 0,
+          "thursday": 0,
+          "friday": 0,
+          "saturday": 0,
+          "sunday": 0
+        },
+        {
+          "name": "kurzfristiges Engagement",
+          "monday": 0,
+          "tuesday": 0,
+          "wednesday": 0,
+          "thursday": 0,
+          "friday": 0,
+          "saturday": 0,
+          "sunday": 0
+        }
+      ],
+      "contacts": [
+        {
+          "name": "Anzahl",
+          "monday": 0,
+          "tuesday": 0,
+          "wednesday": 0,
+          "thursday": 0,
+          "friday": 0,
+          "saturday": 0,
+          "sunday": 0
+        }
+      ],
+      "monthlyMean": 0,
+      "cooperations": [
+        {
+          "name": "innerhalb der Schule",
+          "monday": 0,
+          "tuesday": 0,
+          "wednesday": 0,
+          "thursday": 0,
+          "friday": 0,
+          "saturday": 0,
+          "sunday": 0
+        },
+        {
+          "name": "außerhalb der Schule der Schule",
+          "monday": 0,
+          "tuesday": 0,
+          "wednesday": 0,
+          "thursday": 0,
+          "friday": 0,
+          "saturday": 0,
+          "sunday": 0
+        }
+      ],
+      "pupils": 0,
+      "comment": ""
+    },
+    "structure": [
       {
         "type": "timeSpan",
         "name": "timeSpan",
         "label": "Zeitraum",
         "from": {
-          "value": "Mon Nov 22 2021 11:24:12 GMT+0100 (Central European Standard Time)",
+          "defaultValue": "Mon Nov 22 2021 11:24:12 GMT+0100 (Central European Standard Time)",
           "disabled": false
         },
         "to": {
-          "value": "Sun Nov 26 2021 11:24:12 GMT+0100 (Central European Standard Time)",
+          "defaultValue": "Sun Nov 26 2021 11:24:12 GMT+0100 (Central European Standard Time)",
           "disabled": false
         }
       },
@@ -24,69 +134,69 @@
         "items": [
           {
             "name": {
-              "value": "Kurzberatung",
+              "defaultValue": "Kurzberatung",
               "disabled": true
             },
             "monday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "tuesday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "wednesday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "thursday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "friday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "saturday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "sunday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             }
           },
           {
             "name": {
-              "value": "Beratungen > 15 min",
+              "defaultValue": "Beratungen > 15 min",
               "disabled": true
             },
             "monday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "tuesday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "wednesday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "thursday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "friday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "saturday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "sunday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             }
           }
@@ -97,7 +207,7 @@
         "type": "number",
         "name": "consultees",
         "label": "Zu beratende Personen",
-        "value": 0,
+        "defaultValue": 0,
         "disabled": false,
         "min": 0,
         "max": null,
@@ -113,69 +223,69 @@
         "items": [
           {
             "name": {
-              "value": "psychosoziale Beratung",
+              "defaultValue": "psychosoziale Beratung",
               "disabled": true
             },
             "monday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "tuesday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "wednesday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "thursday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "friday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "saturday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "sunday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             }
           },
           {
             "name": {
-              "value": "Konflikt",
+              "defaultValue": "Konflikt",
               "disabled": true
             },
             "monday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "tuesday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "wednesday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "thursday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "friday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "saturday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "sunday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             }
           }
@@ -213,69 +323,69 @@
         "items": [
           {
             "name": {
-              "value": "regelmäßiges Engagement",
+              "defaultValue": "regelmäßiges Engagement",
               "disabled": true
             },
             "monday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "tuesday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "wednesday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "thursday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "friday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "saturday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "sunday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             }
           },
           {
             "name": {
-              "value": "kurzfristiges Engagement",
+              "defaultValue": "kurzfristiges Engagement",
               "disabled": true
             },
             "monday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "tuesday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "wednesday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "thursday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "friday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "saturday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "sunday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             }
           }
@@ -292,35 +402,35 @@
         "items": [
           {
             "name": {
-              "value": "Anzahl",
+              "defaultValue": "Anzahl",
               "disabled": true
             },
             "monday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "tuesday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "wednesday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "thursday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "friday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "saturday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "sunday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             }
           }
@@ -330,7 +440,7 @@
         "type": "number",
         "name": "monthlyMean",
         "label": "Monatsmittel",
-        "value": 0,
+        "defaultValue": 0,
         "min": 0,
         "step": 1,
         "max": null
@@ -346,69 +456,69 @@
         "items": [
           {
             "name": {
-              "value": "innerhalb der Schule",
+              "defaultValue": "innerhalb der Schule",
               "disabled": true
             },
             "monday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "tuesday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "wednesday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "thursday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "friday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "saturday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "sunday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             }
           },
           {
             "name": {
-              "value": "außerhalb der Schule der Schule",
+              "defaultValue": "außerhalb der Schule der Schule",
               "disabled": true
             },
             "monday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "tuesday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "wednesday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "thursday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "friday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "saturday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             },
             "sunday": {
-              "value": 0,
+              "defaultValue": 0,
               "disabled": false
             }
           }
@@ -422,7 +532,7 @@
         "type": "number",
         "name": "pupils",
         "label": "Schülerinnen und Schüler",
-        "value": 0,
+        "defaultValue": 0,
         "min": 0,
         "step": 1,
         "max": null
@@ -435,7 +545,7 @@
         "type": "comment",
         "name": "comment",
         "label": "Bemerkung",
-        "value": "",
+        "defaultValue": "",
         "disabled": false
       }
     ]

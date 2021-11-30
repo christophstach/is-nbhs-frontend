@@ -8,8 +8,8 @@ import { Controller, useFormContext } from 'react-hook-form';
 export interface TimeSpanProps {
     name: string;
     label: string;
-    from: { value: string, disabled: boolean };
-    to: { value: string, disabled: boolean };
+    from: { defaultValue: string, disabled: boolean };
+    to: { defaultValue: string, disabled: boolean };
 }
 
 const TimeSpan: FunctionComponent<TimeSpanProps> = (props) => {
@@ -23,7 +23,7 @@ const TimeSpan: FunctionComponent<TimeSpanProps> = (props) => {
             <TableCell colSpan={4}>
                 <Controller name={`${props.name}.from`}
                             control={control}
-                            defaultValue={new Date(props.from.value)}
+                            defaultValue={new Date(props.from.defaultValue)}
                             render={({field}) => (
                                 <DatePicker
                                     mask="__.__.____"
@@ -48,7 +48,7 @@ const TimeSpan: FunctionComponent<TimeSpanProps> = (props) => {
             <TableCell colSpan={4}>
                 <Controller name={`${props.name}.to`}
                             control={control}
-                            defaultValue={new Date(props.to.value)}
+                            defaultValue={new Date(props.to.defaultValue)}
                             render={({field}) => (
                                 <DatePicker
                                     mask="__.__.____"

@@ -7,7 +7,7 @@ import { TableCell, TextField } from '@mui/material';
 export interface NumberProps {
     name: string;
     label: string;
-    value: number;
+    defaultValue: number;
     disabled: boolean;
     min?: number;
     max?: number;
@@ -23,7 +23,7 @@ const Number: FunctionComponent<NumberProps> = (props) => {
                 <strong>{props.label}</strong>
             </TableCell>
             <TableCell colSpan={8}>
-                <Controller name={props.name} control={control} defaultValue={props.value} render={({field}) => (
+                <Controller name={props.name} control={control} defaultValue={props.defaultValue} render={({field}) => (
                     <TextField {...field}
                                label={props.label}
                                disabled={props.disabled}

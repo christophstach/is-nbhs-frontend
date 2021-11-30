@@ -16,10 +16,11 @@ import CheckIcon from '@mui/icons-material/Check';
 import InfoIcon from '@mui/icons-material/Info';
 import TopNavPortal from '../../../components/elements/TopNavPortal';
 import Button from '@mui/material/Button';
-import { useGtbOsForms } from '../../../hooks/clients/use-gtb-os-forms';
+import { useGetGtbOsForms } from '../../../hooks/clients/use-get-gtb-os-forms';
 
 
-export interface GtbOsFormsResponse {
+
+export interface GetGtbOsFormsResponse {
     data: {
         id: number,
         name: string,
@@ -36,7 +37,7 @@ export interface GtbOsFormsResponse {
 
 
 const GtbOsIndex: NextPage = () => {
-    const response = useGtbOsForms();
+    const response = useGetGtbOsForms();
     const forms = response.data?.data;
 
     return (
